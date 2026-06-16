@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NAIVAIDYA – The Last Minute Saviour</title>
+  <meta name="description" content="NAIVAIDYA – Your trusted healthcare companion for medicine delivery, lab tests, doctor consultations, and emergency support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- App Container -->
+  <div class="app-wrapper">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen" id="appRoot">
+
+        <!-- ========== SPLASH SCREEN ========== -->
+        <div class="screen active" id="screen-splash">
+          <div class="splash-bg">
+            <div class="splash-particles">
+              <div class="particle p1"></div>
+              <div class="particle p2"></div>
+              <div class="particle p3"></div>
+              <div class="particle p4"></div>
+              <div class="particle p5"></div>
+            </div>
+            <div class="splash-content">
+              <div class="splash-logo-wrap">
+                <div class="splash-logo-ring outer"></div>
+                <div class="splash-logo-ring mid"></div>
+                <div class="splash-logo-icon">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <path d="M30 8L38 20H52L41 29L45 43L30 34L15 43L19 29L8 20H22L30 8Z" fill="white" opacity="0.2"/>
+                    <rect x="23" y="20" width="14" height="20" rx="3" fill="white"/>
+                    <rect x="20" y="27" width="20" height="6" rx="3" fill="#14B8A6"/>
+                    <circle cx="30" cy="14" r="6" fill="white"/>
+                    <path d="M27 14 L30 11 L33 14 L30 17 Z" fill="#14B8A6"/>
+                  </svg>
+                </div>
+              </div>
+              <h1 class="splash-title">NAIVAIDYA</h1>
+              <p class="splash-tagline">The Last Minute Saviour</p>
+              <div class="splash-loader">
+                <div class="loader-track">
+                  <div class="loader-fill" id="splashLoader"></div>
+                </div>
+                <span class="loader-text">Loading...</span>
+              </div>
+              <div class="splash-badges">
+                <span class="splash-badge">🏥 Trusted by 1M+</span>
+                <span class="splash-badge">⭐ 4.8 Rated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== HOME SCREEN ========== -->
+        <div class="screen" id="screen-home">
+          <!-- Header -->
+          <div class="home-header">
+            <div class="header-top">
+              <div class="location-wrap">
+                <div class="location-icon">📍</div>
+                <div class="location-text">
+                  <span class="loc-label">Deliver to</span>
+                  <span class="loc-val">New Delhi, 110001 <span class="loc-arrow">▾</span></span>
+                </div>
+              </div>
+              <div class="header-icons">
+                <button class="icon-btn" id="notif-btn" onclick="showNotification()">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                  <span class="notif-dot"></span>
+                </button>
+                <button class="icon-btn profile-btn" onclick="navigate('profile')">
+                  <img src="https://ui-avatars.com/api/?name=User&background=14B8A6&color=fff&size=32" alt="Profile" class="profile-avatar"/>
+                </button>
+              </div>
+            </div>
+            <!-- Search Bar -->
+            <div class="search-wrap">
+              <div class="search-bar" onclick="focusSearch()">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <span class="search-placeholder">Search medicines, doctors, lab tests...</span>
+                <button class="camera-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scrollable Content -->
+          <div class="screen-scroll">
+            <!-- Quick Services -->
+            <div class="section-pad">
+              <h2 class="section-title">Quick Services</h2>
+              <div class="services-grid">
+                <button class="service-card sc-teal" onclick="navigate('medicine')">
+                  <div class="sc-icon">💊</div>
+                  <span class="sc-label">Medicine<br/>Delivery</span>
+                </button>
+                <button class="service-card sc-purple" onclick="navigate('lab')">
+                  <div class="sc-icon">🧪</div>
+                  <span class="sc-label">Lab<br/>Tests</span>
+                </button>
+                <button class="service-card sc-blue" onclick="navigate('doctor')">
+                  <div class="sc-icon">👨‍⚕️</div>
+                  <span class="sc-label">Doctor<br/>Consult</span>
+                </button>
+                <button class="service-card sc-red" onclick="navigate('sos')">
+                  <div class="sc-icon">🚑</div>
+                  <span class="sc-label">SOS<br/>Emergency</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- SOS Emergency Card -->
+            <div class="section-pad">
+              <div class="sos-card" onclick="navigate('sos')">
+                <div class="sos-left">
+                  <div class="sos-badge">EMERGENCY</div>
+                  <h3 class="sos-title">Emergency Support</h3>
+                  <div class="sos-features">
+                    <span>🚑 Ambulance</span>
+                    <span>🏥 Hospitals</span>
+                    <span>📞 Contacts</span>
+                  </div>
+                  <button class="sos-btn" onclick="navigate('sos')">Call Now</button>
+                </div>
+                <div class="sos-right">
+                  <div class="sos-ambulance">
+                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
+                      <rect x="10" y="40" width="65" height="35" rx="6" fill="white" opacity="0.9"/>
+                      <rect x="55" y="30" width="22" height="20" rx="4" fill="white" opacity="0.7"/>
+                      <circle cx="22" cy="78" r="9" fill="#EF4444" stroke="white" stroke-width="2"/>
+                      <circle cx="65" cy="78" r="9" fill="#EF4444" stroke="white" stroke-width="2"/>
+                      <rect x="35" y="44" width="18" height="3" rx="1.5" fill="#EF4444"/>
+                      <rect x="42" y="37" width="4" height="17" rx="2" fill="#EF4444"/>
+                      <rect x="75" y="52" width="12" height="8" rx="2" fill="#EF4444" opacity="0.8"/>
+                    </svg>
+                  </div>
+                  <div class="sos-pulse"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo Banner -->
+            <div class="section-pad">
+              <div class="promo-banner">
+                <div class="promo-left">
+                  <div class="promo-tag">LIMITED OFFER</div>
+                  <h3 class="promo-title">BUY 1<br/><span class="promo-accent">GET 1</span> FREE</h3>
+                  <p class="promo-sub">Full Body Checkup<br/><span class="promo-feature">✓ Free Home Collection</span></p>
+                  <button class="promo-btn" onclick="navigate('lab')">Book Now →</button>
+                </div>
+                <div class="promo-right">
+                  <div class="promo-illustration">
+                    <div class="promo-circle c1"></div>
+                    <div class="promo-circle c2"></div>
+                    <div class="promo-img-wrap">
+                      <svg width="90" height="90" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="45" fill="white" opacity="0.15"/>
+                        <rect x="30" y="25" width="40" height="50" rx="5" fill="white" opacity="0.9"/>
+                        <rect x="37" y="35" width="26" height="3" rx="1.5" fill="#14B8A6"/>
+                        <rect x="37" y="42" width="20" height="3" rx="1.5" fill="#94a3b8"/>
+                        <rect x="37" y="49" width="23" height="3" rx="1.5" fill="#94a3b8"/>
+                        <circle cx="50" cy="64" r="7" fill="#14B8A6"/>
+                        <path d="M47 64 L50 61 L53 64 L50 67 Z" fill="white"/>
+                        <circle cx="65" cy="28" r="12" fill="#EF4444" opacity="0.9"/>
+                        <text x="61" y="32" font-size="10" fill="white" font-weight="bold">%</text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Popular Lab Tests -->
+            <div class="section-pad">
+              <div class="section-header">
+                <h2 class="section-title">Popular Lab Tests</h2>
+                <button class="see-all" onclick="navigate('lab')">See All →</button>
+              </div>
+              <div class="h-scroll">
+                <div class="lab-card" onclick="navigate('lab')">
+                  <div class="lab-icon" style="background:#FEF3C7;">🩸</div>
+                  <div class="lab-name">Blood Test</div>
+                  <div class="lab-desc">Basic Profile</div>
+                  <div class="lab-price">₹299</div>
+                  <button class="lab-book-btn">Book</button>
+                </div>
+                <div class="lab-card" onclick="navigate('lab')">
+                  <div class="lab-icon" style="background:#DCFCE7;">🧬</div>
+                  <div class="lab-name">CBC Test</div>
+                  <div class="lab-desc">Complete Count</div>
+                  <div class="lab-price">₹199</div>
+                  <button class="lab-book-btn">Book</button>
+                </div>
+                <div class="lab-card" onclick="navigate('lab')">
+                  <div class="lab-icon" style="background:#FEE2E2;">🍬</div>
+                  <div class="lab-name">Diabetes</div>
+                  <div class="lab-desc">Full Profile</div>
+                  <div class="lab-price">₹249</div>
+                  <button class="lab-book-btn">Book</button>
+                </div>
+                <div class="lab-card" onclick="navigate('lab')">
+                  <div class="lab-icon" style="background:#EDE9FE;">❤️</div>
+                  <div class="lab-name">Heart Profile</div>
+                  <div class="lab-desc">Cardiac Panel</div>
+                  <div class="lab-price">₹599</div>
+                  <button class="lab-book-btn">Book</button>
+                </div>
+                <div class="lab-card" onclick="navigate('lab')">
+                  <div class="lab-icon" style="background:#DBEAFE;">🔬</div>
+                  <div class="lab-name">Full Body</div>
+                  <div class="lab-desc">Checkup</div>
+                  <div class="lab-price">₹799</div>
+                  <button class="lab-book-btn">Book</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Doctor Consultation -->
+            <div class="section-pad">
+              <div class="section-header">
+                <h2 class="section-title">Doctor Consult</h2>
+                <button class="see-all" onclick="navigate('doctor')">See All →</button>
+              </div>
+              <div class="h-scroll">
+                <div class="doc-card" onclick="navigate('doctor')">
+                  <div class="doc-avatar av1">
+                    <svg width="36" height="36" viewBox="0 0 50 50" fill="none"><circle cx="25" cy="18" r="10" fill="white" opacity="0.8"/><path d="M10 45c0-8.3 6.7-15 15-15s15 6.7 15 15" fill="white" opacity="0.8"/></svg>
+                  </div>
+                  <div class="doc-specialty">General Physician</div>
+                  <div class="doc-avail">🟢 Available in 2 mins</div>
+                  <div class="doc-fee">₹99</div>
+                  <button class="doc-btn">Consult</button>
+                </div>
+                <div class="doc-card" onclick="navigate('doctor')">
+                  <div class="doc-avatar av2">
+                    <svg width="36" height="36" viewBox="0 0 50 50" fill="none"><circle cx="25" cy="18" r="10" fill="white" opacity="0.8"/><path d="M10 45c0-8.3 6.7-15 15-15s15 6.7 15 15" fill="white" opacity="0.8"/></svg>
+                  </div>
+                  <div class="doc-specialty">Cardiologist</div>
+                  <div class="doc-avail">🟢 Available in 5 mins</div>
+                  <div class="doc-fee">₹199</div>
+                  <button class="doc-btn">Consult</button>
+                </div>
+                <div class="doc-card" onclick="navigate('doctor')">
+                  <div class="doc-avatar av3">
+                    <svg width="36" height="36" viewBox="0 0 50 50" fill="none"><circle cx="25" cy="18" r="10" fill="white" opacity="0.8"/><path d="M10 45c0-8.3 6.7-15 15-15s15 6.7 15 15" fill="white" opacity="0.8"/></svg>
+                  </div>
+                  <div class="doc-specialty">Gynecologist</div>
+                  <div class="doc-avail">🟢 Available in 3 mins</div>
+                  <div class="doc-fee">₹149</div>
+                  <button class="doc-btn">Consult</button>
+                </div>
+                <div class="doc-card" onclick="navigate('doctor')">
+                  <div class="doc-avatar av4">
+                    <svg width="36" height="36" viewBox="0 0 50 50" fill="none"><circle cx="25" cy="18" r="10" fill="white" opacity="0.8"/><path d="M10 45c0-8.3 6.7-15 15-15s15 6.7 15 15" fill="white" opacity="0.8"/></svg>
+                  </div>
+                  <div class="doc-specialty">Dermatologist</div>
+                  <div class="doc-avail">🟢 Available in 4 mins</div>
+                  <div class="doc-fee">₹199</div>
+                  <button class="doc-btn">Consult</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI Nurse Companion -->
+            <div class="section-pad">
+              <div class="ai-card" onclick="navigate('aichat')">
+                <div class="ai-left">
+                  <div class="ai-badge">AI POWERED</div>
+                  <h3 class="ai-title">AI Health<br/>Assistant</h3>
+                  <div class="ai-features">
+                    <span>✓ Symptom Checker</span>
+                    <span>✓ Medicine Reminder</span>
+                    <span>✓ Pregnancy Care</span>
+                    <span>✓ Mental Wellness</span>
+                    <span>✓ Health Records</span>
+                  </div>
+                  <button class="ai-btn">Start Chat →</button>
+                </div>
+                <div class="ai-right">
+                  <div class="ai-bot">
+                    <div class="bot-head">
+                      <div class="bot-eyes">
+                        <div class="bot-eye"></div>
+                        <div class="bot-eye"></div>
+                      </div>
+                      <div class="bot-mouth"></div>
+                    </div>
+                    <div class="bot-body"></div>
+                    <div class="bot-bubble">Hi! How can I help?</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Medicine Savings -->
+            <div class="section-pad">
+              <div class="savings-card">
+                <div class="savings-header">
+                  <div class="savings-badge">SAVE UP TO 80%</div>
+                </div>
+                <h3 class="savings-title">Switch to Generic Medicines</h3>
+                <div class="savings-compare">
+                  <div class="med-item branded">
+                    <div class="med-label">Branded</div>
+                    <div class="med-name">Crocin 500mg</div>
+                    <div class="med-price-cross">₹450</div>
+                  </div>
+                  <div class="savings-arrow">→</div>
+                  <div class="med-item generic">
+                    <div class="med-label">Generic</div>
+                    <div class="med-name">Paracetamol 500mg</div>
+                    <div class="med-price-save">₹95</div>
+                  </div>
+                </div>
+                <div class="savings-check">
+                  <span>✓ Same Composition</span>
+                  <span>✓ Doctor Approved</span>
+                </div>
+                <button class="savings-btn" onclick="navigate('medicine')">View Alternatives →</button>
+              </div>
+            </div>
+
+            <div style="height: 80px;"></div>
+          </div>
+
+          <!-- Bottom Nav -->
+          <nav class="bottom-nav">
+            <button class="nav-item active" onclick="navigate('home')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              <span>Home</span>
+            </button>
+            <button class="nav-item" onclick="navigate('medicine')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M9 9h6M9 15h6M9 12h6"/></svg>
+              <span>Services</span>
+            </button>
+            <button class="nav-item" onclick="navigate('lab')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+              <span>Lab Tests</span>
+            </button>
+            <button class="nav-item" onclick="navigate('orders')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Orders</span>
+            </button>
+            <button class="nav-item" onclick="navigate('profile')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Profile</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- ========== MEDICINE SCREEN ========== -->
+        <div class="screen" id="screen-medicine">
+          <div class="inner-header">
+            <button class="back-btn" onclick="navigate('home')">←</button>
+            <h2 class="inner-title">Medicine Delivery</h2>
+            <button class="cart-btn">🛒 <span class="cart-count">3</span></button>
+          </div>
+          <div class="screen-scroll">
+            <!-- Search -->
+            <div class="section-pad">
+              <div class="search-bar">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <span class="search-placeholder">Search medicines...</span>
+              </div>
+            </div>
+
+            <!-- Upload Prescription -->
+            <div class="section-pad">
+              <div class="rx-upload-card">
+                <div class="rx-icon">📋</div>
+                <div class="rx-text">
+                  <div class="rx-title">Upload Prescription</div>
+                  <div class="rx-sub">Get medicines prescribed by your doctor</div>
+                </div>
+                <button class="rx-btn">Upload</button>
+              </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="section-pad">
+              <h3 class="section-title">Categories</h3>
+              <div class="category-scroll">
+                <button class="cat-chip active">All</button>
+                <button class="cat-chip">Fever</button>
+                <button class="cat-chip">Diabetes</button>
+                <button class="cat-chip">Heart Care</button>
+                <button class="cat-chip">Mental Health</button>
+                <button class="cat-chip">Women's Care</button>
+                <button class="cat-chip">Child Care</button>
+              </div>
+            </div>
+
+            <!-- Medicine Cards -->
+            <div class="section-pad">
+              <h3 class="section-title">Popular Medicines</h3>
+              <div class="medicine-grid">
+                <div class="med-card">
+                  <div class="med-img">💊</div>
+                  <div class="med-info">
+                    <div class="med-card-name">Crocin 500mg</div>
+                    <div class="med-card-type">Paracetamol</div>
+                    <div class="med-card-price">₹45 <span class="med-card-mrp">₹65</span></div>
+                  </div>
+                  <button class="med-add-btn">+</button>
+                </div>
+                <div class="med-card">
+                  <div class="med-img">💊</div>
+                  <div class="med-info">
+                    <div class="med-card-name">Metformin 500</div>
+                    <div class="med-card-type">Diabetes</div>
+                    <div class="med-card-price">₹85 <span class="med-card-mrp">₹120</span></div>
+                  </div>
+                  <button class="med-add-btn">+</button>
+                </div>
+                <div class="med-card">
+                  <div class="med-img">🫀</div>
+                  <div class="med-info">
+                    <div class="med-card-name">Amlodipine 5</div>
+                    <div class="med-card-type">Heart Care</div>
+                    <div class="med-card-price">₹55 <span class="med-card-mrp">₹95</span></div>
+                  </div>
+                  <button class="med-add-btn">+</button>
+                </div>
+                <div class="med-card">
+                  <div class="med-img">🧴</div>
+                  <div class="med-info">
+                    <div class="med-card-name">Cetrizine 10mg</div>
+                    <div class="med-card-type">Allergy</div>
+                    <div class="med-card-price">₹25 <span class="med-card-mrp">₹40</span></div>
+                  </div>
+                  <button class="med-add-btn">+</button>
+                </div>
+                <div class="med-card">
+                  <div class="med-img">💊</div>
+                  <div class="med-info">
+                    <div class="med-card-name">Omeprazole 20</div>
+                    <div class="med-card-type">Acidity</div>
+                    <div class="med-card-price">₹35 <span class="med-card-mrp">₹60</span></div>
+                  </div>
+                  <button class="med-add-btn">+</button>
+                </div>
+                <div class="med-card">
+                  <div class="med-img">🌡️</div>
+                  <div class="med-info">
+                    <div class="med-card-name">Azithromycin</div>
+                    <div class="med-card-type">Antibiotic</div>
+                    <div class="med-card-price">₹115 <span class="med-card-mrp">₹180</span></div>
+                  </div>
+                  <button class="med-add-btn">+</button>
+                </div>
+              </div>
+            </div>
+            <div style="height:80px;"></div>
+          </div>
+          <nav class="bottom-nav">
+            <button class="nav-item" onclick="navigate('home')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              <span>Home</span>
+            </button>
+            <button class="nav-item active" onclick="navigate('medicine')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M9 9h6M9 15h6M9 12h6"/></svg>
+              <span>Services</span>
+            </button>
+            <button class="nav-item" onclick="navigate('lab')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+              <span>Lab Tests</span>
+            </button>
+            <button class="nav-item" onclick="navigate('orders')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Orders</span>
+            </button>
+            <button class="nav-item" onclick="navigate('profile')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Profile</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- ========== LAB TEST SCREEN ========== -->
+        <div class="screen" id="screen-lab">
+          <div class="inner-header">
+            <button class="back-btn" onclick="navigate('home')">←</button>
+            <h2 class="inner-title">Lab Tests</h2>
+            <button class="icon-btn">🔔</button>
+          </div>
+          <div class="screen-scroll">
+            <div class="section-pad">
+              <div class="search-bar">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <span class="search-placeholder">Search lab tests...</span>
+              </div>
+            </div>
+
+            <!-- Featured Banner -->
+            <div class="section-pad">
+              <div class="lab-banner">
+                <div class="lab-banner-left">
+                  <div class="lb-tag">BEST VALUE</div>
+                  <h3 class="lb-title">Full Body<br/>Checkup</h3>
+                  <p class="lb-sub">75 Tests Included<br/>₹799 <span class="lb-cross">₹2500</span></p>
+                  <button class="lb-btn" onclick="showBookingModal()">Book Now</button>
+                </div>
+                <div class="lab-banner-right">
+                  <div class="lab-banner-icon">🔬</div>
+                  <div class="lb-circles">
+                    <div class="lb-c1"></div>
+                    <div class="lb-c2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Popular Tests -->
+            <div class="section-pad">
+              <h3 class="section-title">Popular Tests</h3>
+              <div class="lab-list">
+                <div class="lab-list-card">
+                  <div class="llc-icon" style="background:#FEF3C7;">🩸</div>
+                  <div class="llc-info">
+                    <div class="llc-name">Blood Test</div>
+                    <div class="llc-desc">Basic health parameters • 12 tests</div>
+                    <div class="llc-tags"><span>Home Collection</span><span>Reports in 6hrs</span></div>
+                  </div>
+                  <div class="llc-right">
+                    <div class="llc-price">₹299</div>
+                    <button class="llc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+                <div class="lab-list-card">
+                  <div class="llc-icon" style="background:#DCFCE7;">🧬</div>
+                  <div class="llc-info">
+                    <div class="llc-name">CBC Test</div>
+                    <div class="llc-desc">Complete blood count • 28 tests</div>
+                    <div class="llc-tags"><span>Home Collection</span><span>Reports in 4hrs</span></div>
+                  </div>
+                  <div class="llc-right">
+                    <div class="llc-price">₹199</div>
+                    <button class="llc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+                <div class="lab-list-card">
+                  <div class="llc-icon" style="background:#FEE2E2;">🦋</div>
+                  <div class="llc-info">
+                    <div class="llc-name">Thyroid Test</div>
+                    <div class="llc-desc">TSH, T3, T4 • 3 tests</div>
+                    <div class="llc-tags"><span>Home Collection</span><span>Reports in 8hrs</span></div>
+                  </div>
+                  <div class="llc-right">
+                    <div class="llc-price">₹349</div>
+                    <button class="llc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+                <div class="lab-list-card">
+                  <div class="llc-icon" style="background:#FEE2E2;">🍬</div>
+                  <div class="llc-info">
+                    <div class="llc-name">Diabetes Profile</div>
+                    <div class="llc-desc">HbA1c, Fasting Sugar • 8 tests</div>
+                    <div class="llc-tags"><span>Home Collection</span><span>Fasting Required</span></div>
+                  </div>
+                  <div class="llc-right">
+                    <div class="llc-price">₹249</div>
+                    <button class="llc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+                <div class="lab-list-card">
+                  <div class="llc-icon" style="background:#DBEAFE;">☀️</div>
+                  <div class="llc-info">
+                    <div class="llc-name">Vitamin D Test</div>
+                    <div class="llc-desc">25-OH Vitamin D • 1 test</div>
+                    <div class="llc-tags"><span>Home Collection</span><span>Reports in 24hrs</span></div>
+                  </div>
+                  <div class="llc-right">
+                    <div class="llc-price">₹899</div>
+                    <button class="llc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+                <div class="lab-list-card">
+                  <div class="llc-icon" style="background:#EDE9FE;">❤️</div>
+                  <div class="llc-info">
+                    <div class="llc-name">Heart Profile</div>
+                    <div class="llc-desc">Lipid panel, ECG • 18 tests</div>
+                    <div class="llc-tags"><span>Home Collection</span><span>Reports in 12hrs</span></div>
+                  </div>
+                  <div class="llc-right">
+                    <div class="llc-price">₹599</div>
+                    <button class="llc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="height:80px;"></div>
+          </div>
+          <nav class="bottom-nav">
+            <button class="nav-item" onclick="navigate('home')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              <span>Home</span>
+            </button>
+            <button class="nav-item" onclick="navigate('medicine')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
+              <span>Services</span>
+            </button>
+            <button class="nav-item active" onclick="navigate('lab')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+              <span>Lab Tests</span>
+            </button>
+            <button class="nav-item" onclick="navigate('orders')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Orders</span>
+            </button>
+            <button class="nav-item" onclick="navigate('profile')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Profile</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- ========== DOCTOR CONSULTATION SCREEN ========== -->
+        <div class="screen" id="screen-doctor">
+          <div class="inner-header">
+            <button class="back-btn" onclick="navigate('home')">←</button>
+            <h2 class="inner-title">Doctor Consultation</h2>
+            <button class="icon-btn">🔔</button>
+          </div>
+          <div class="screen-scroll">
+            <!-- Specialities -->
+            <div class="section-pad">
+              <h3 class="section-title">Choose Speciality</h3>
+              <div class="spec-grid">
+                <button class="spec-card spec-active">
+                  <div class="spec-icon">🩺</div>
+                  <span>General</span>
+                </button>
+                <button class="spec-card">
+                  <div class="spec-icon">❤️</div>
+                  <span>Cardio</span>
+                </button>
+                <button class="spec-card">
+                  <div class="spec-icon">🧴</div>
+                  <span>Dermato</span>
+                </button>
+                <button class="spec-card">
+                  <div class="spec-icon">🌸</div>
+                  <span>Gyneco</span>
+                </button>
+                <button class="spec-card">
+                  <div class="spec-icon">🧠</div>
+                  <span>Psychia</span>
+                </button>
+                <button class="spec-card">
+                  <div class="spec-icon">👶</div>
+                  <span>Pediatr</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Doctor Cards -->
+            <div class="section-pad">
+              <h3 class="section-title">Available Doctors</h3>
+              <div class="doctor-list">
+
+                <div class="doctor-profile-card">
+                  <div class="dpc-avatar av1">
+                    <svg width="50" height="50" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="28" r="14" fill="white" opacity="0.85"/><path d="M14 65c0-11.6 9.4-21 21-21s21 9.4 21 21" fill="white" opacity="0.85"/></svg>
+                  </div>
+                  <div class="dpc-info">
+                    <div class="dpc-name">Dr. Priya Sharma</div>
+                    <div class="dpc-spec">General Physician</div>
+                    <div class="dpc-meta">
+                      <span>⭐ 4.9</span>
+                      <span>12 yrs exp</span>
+                      <span>🟢 2 mins</span>
+                    </div>
+                  </div>
+                  <div class="dpc-right">
+                    <div class="dpc-fee">₹99</div>
+                    <button class="dpc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+
+                <div class="doctor-profile-card">
+                  <div class="dpc-avatar av2">
+                    <svg width="50" height="50" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="28" r="14" fill="white" opacity="0.85"/><path d="M14 65c0-11.6 9.4-21 21-21s21 9.4 21 21" fill="white" opacity="0.85"/></svg>
+                  </div>
+                  <div class="dpc-info">
+                    <div class="dpc-name">Dr. Rahul Mehta</div>
+                    <div class="dpc-spec">Cardiologist</div>
+                    <div class="dpc-meta">
+                      <span>⭐ 4.8</span>
+                      <span>18 yrs exp</span>
+                      <span>🟢 5 mins</span>
+                    </div>
+                  </div>
+                  <div class="dpc-right">
+                    <div class="dpc-fee">₹199</div>
+                    <button class="dpc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+
+                <div class="doctor-profile-card">
+                  <div class="dpc-avatar av3">
+                    <svg width="50" height="50" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="28" r="14" fill="white" opacity="0.85"/><path d="M14 65c0-11.6 9.4-21 21-21s21 9.4 21 21" fill="white" opacity="0.85"/></svg>
+                  </div>
+                  <div class="dpc-info">
+                    <div class="dpc-name">Dr. Anjali Singh</div>
+                    <div class="dpc-spec">Gynecologist</div>
+                    <div class="dpc-meta">
+                      <span>⭐ 4.9</span>
+                      <span>10 yrs exp</span>
+                      <span>🟢 3 mins</span>
+                    </div>
+                  </div>
+                  <div class="dpc-right">
+                    <div class="dpc-fee">₹149</div>
+                    <button class="dpc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+
+                <div class="doctor-profile-card">
+                  <div class="dpc-avatar av4">
+                    <svg width="50" height="50" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="28" r="14" fill="white" opacity="0.85"/><path d="M14 65c0-11.6 9.4-21 21-21s21 9.4 21 21" fill="white" opacity="0.85"/></svg>
+                  </div>
+                  <div class="dpc-info">
+                    <div class="dpc-name">Dr. Vikram Patel</div>
+                    <div class="dpc-spec">Dermatologist</div>
+                    <div class="dpc-meta">
+                      <span>⭐ 4.7</span>
+                      <span>8 yrs exp</span>
+                      <span>🟢 4 mins</span>
+                    </div>
+                  </div>
+                  <div class="dpc-right">
+                    <div class="dpc-fee">₹199</div>
+                    <button class="dpc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+
+                <div class="doctor-profile-card">
+                  <div class="dpc-avatar av5">
+                    <svg width="50" height="50" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="28" r="14" fill="white" opacity="0.85"/><path d="M14 65c0-11.6 9.4-21 21-21s21 9.4 21 21" fill="white" opacity="0.85"/></svg>
+                  </div>
+                  <div class="dpc-info">
+                    <div class="dpc-name">Dr. Meena Iyer</div>
+                    <div class="dpc-spec">Psychiatrist</div>
+                    <div class="dpc-meta">
+                      <span>⭐ 4.9</span>
+                      <span>15 yrs exp</span>
+                      <span>🟢 7 mins</span>
+                    </div>
+                  </div>
+                  <div class="dpc-right">
+                    <div class="dpc-fee">₹249</div>
+                    <button class="dpc-btn" onclick="showBookingModal()">Book</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div style="height:80px;"></div>
+          </div>
+          <nav class="bottom-nav">
+            <button class="nav-item" onclick="navigate('home')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              <span>Home</span>
+            </button>
+            <button class="nav-item active" onclick="navigate('doctor')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
+              <span>Services</span>
+            </button>
+            <button class="nav-item" onclick="navigate('lab')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+              <span>Lab Tests</span>
+            </button>
+            <button class="nav-item" onclick="navigate('orders')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Orders</span>
+            </button>
+            <button class="nav-item" onclick="navigate('profile')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Profile</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- ========== SOS SCREEN ========== -->
+        <div class="screen" id="screen-sos">
+          <div class="sos-screen-bg">
+            <div class="sos-screen-header">
+              <button class="back-btn-white" onclick="navigate('home')">←</button>
+              <h2 class="sos-screen-title">SOS Emergency</h2>
+              <div></div>
+            </div>
+
+            <div class="sos-pulse-center">
+              <div class="sos-ring r1"></div>
+              <div class="sos-ring r2"></div>
+              <div class="sos-ring r3"></div>
+              <button class="sos-center-btn" onclick="sosCall()">
+                <div class="sos-center-icon">🚑</div>
+                <div class="sos-center-text">CALL<br/>AMBULANCE</div>
+              </button>
+            </div>
+
+            <div class="sos-actions-row">
+              <button class="sos-action-btn" onclick="sosShare()">
+                <div class="sab-icon">📍</div>
+                <span>Share<br/>Location</span>
+              </button>
+              <button class="sos-action-btn" onclick="sosHospital()">
+                <div class="sab-icon">🏥</div>
+                <span>Contact<br/>Hospital</span>
+              </button>
+            </div>
+
+            <div class="sos-section">
+              <h3 class="sos-section-title">🏥 Nearby Hospitals</h3>
+              <div class="hospital-list">
+                <div class="hospital-card">
+                  <div class="hosp-info">
+                    <div class="hosp-name">Apollo Hospital</div>
+                    <div class="hosp-dist">1.2 km • Open 24/7</div>
+                  </div>
+                  <button class="hosp-call-btn">📞 Call</button>
+                </div>
+                <div class="hospital-card">
+                  <div class="hosp-info">
+                    <div class="hosp-name">Fortis Hospital</div>
+                    <div class="hosp-dist">2.5 km • Open 24/7</div>
+                  </div>
+                  <button class="hosp-call-btn">📞 Call</button>
+                </div>
+                <div class="hospital-card">
+                  <div class="hosp-info">
+                    <div class="hosp-name">City Care Hospital</div>
+                    <div class="hosp-dist">3.1 km • Open 24/7</div>
+                  </div>
+                  <button class="hosp-call-btn">📞 Call</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="sos-section">
+              <h3 class="sos-section-title">👨‍👩‍👧 Emergency Contacts</h3>
+              <div class="ec-list">
+                <div class="ec-card">
+                  <div class="ec-avatar" style="background:#FEE2E2;">👨</div>
+                  <div class="ec-info">
+                    <div class="ec-name">Father</div>
+                    <div class="ec-num">+91 98765 43210</div>
+                  </div>
+                  <button class="ec-call">📞</button>
+                </div>
+                <div class="ec-card">
+                  <div class="ec-avatar" style="background:#FCE7F3;">👩</div>
+                  <div class="ec-info">
+                    <div class="ec-name">Mother</div>
+                    <div class="ec-num">+91 98765 43211</div>
+                  </div>
+                  <button class="ec-call">📞</button>
+                </div>
+                <div class="ec-card">
+                  <div class="ec-avatar" style="background:#DBEAFE;">👤</div>
+                  <div class="ec-info">
+                    <div class="ec-name">Friend</div>
+                    <div class="ec-num">+91 98765 43212</div>
+                  </div>
+                  <button class="ec-call">📞</button>
+                </div>
+              </div>
+            </div>
+
+            <div style="height:40px;"></div>
+          </div>
+        </div>
+
+        <!-- ========== AI CHAT SCREEN ========== -->
+        <div class="screen" id="screen-aichat">
+          <div class="chat-header">
+            <button class="back-btn" onclick="navigate('home')">←</button>
+            <div class="chat-header-info">
+              <div class="chat-bot-avatar">🤖</div>
+              <div>
+                <div class="chat-bot-name">Vaidy – AI Nurse</div>
+                <div class="chat-bot-status">🟢 Online • Always Available</div>
+              </div>
+            </div>
+            <button class="icon-btn">⋮</button>
+          </div>
+
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-date-divider">Today, 8:22 AM</div>
+
+            <div class="chat-msg bot">
+              <div class="chat-avatar-small">🤖</div>
+              <div class="chat-bubble bot-bubble-style">
+                <p>Hello! I'm <strong>Vaidy</strong>, your AI Health Assistant 👋</p>
+                <p>How can I help you today?</p>
+              </div>
+            </div>
+
+            <div class="chat-msg user">
+              <div class="chat-bubble user-bubble-style">I have fever since morning 🤒</div>
+            </div>
+
+            <div class="chat-msg bot">
+              <div class="chat-avatar-small">🤖</div>
+              <div class="chat-bubble bot-bubble-style">
+                <p>I'm sorry to hear that! 🌡️ For fever, I recommend:</p>
+                <ul>
+                  <li>💧 Stay well hydrated – drink 8-10 glasses of water</li>
+                  <li>😴 Take adequate rest</li>
+                  <li>💊 You may take Paracetamol 500mg if temp is above 101°F</li>
+                  <li>🩺 Consult a doctor if fever persists beyond 2 days</li>
+                </ul>
+                <p><strong>Shall I connect you with a doctor?</strong></p>
+              </div>
+            </div>
+
+            <div class="chat-msg user">
+              <div class="chat-bubble user-bubble-style">Yes please, also can you remind me about my medicines?</div>
+            </div>
+
+            <div class="chat-msg bot">
+              <div class="chat-avatar-small">🤖</div>
+              <div class="chat-bubble bot-bubble-style">
+                <p>Sure! I'll help with both 😊</p>
+                <p>✅ <strong>Doctor Connected</strong> – Dr. Priya Sharma is available in 2 mins</p>
+                <p>⏰ <strong>Reminder Set</strong> – I'll remind you to take medicines at 8 AM, 2 PM, and 8 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="chat-quick-actions">
+            <button class="cqa-btn" onclick="navigate('doctor')">👨‍⚕️ Book Doctor</button>
+            <button class="cqa-btn" onclick="navigate('medicine')">💊 Order Medicines</button>
+            <button class="cqa-btn" onclick="navigate('lab')">🧪 Lab Test</button>
+          </div>
+
+          <div class="chat-input-row">
+            <div class="chat-input-wrap">
+              <input type="text" class="chat-input" id="chatInput" placeholder="Type your symptoms..." />
+              <button class="chat-mic">🎤</button>
+            </div>
+            <button class="chat-send" onclick="sendMessage()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ========== ORDERS SCREEN ========== -->
+        <div class="screen" id="screen-orders">
+          <div class="inner-header">
+            <button class="back-btn" onclick="navigate('home')">←</button>
+            <h2 class="inner-title">My Orders</h2>
+            <button class="icon-btn">🔔</button>
+          </div>
+          <div class="screen-scroll">
+            <div class="section-pad">
+              <div class="order-tabs">
+                <button class="order-tab active">Active</button>
+                <button class="order-tab">Past Orders</button>
+                <button class="order-tab">Reports</button>
+              </div>
+            </div>
+            <div class="section-pad">
+              <div class="order-card">
+                <div class="oc-top">
+                  <div class="oc-type">💊 Medicine Order</div>
+                  <div class="oc-status status-active">In Transit</div>
+                </div>
+                <div class="oc-items">Crocin 500mg × 2, Cetrizine 10mg × 1</div>
+                <div class="oc-meta">
+                  <span>Order #NV2024011</span>
+                  <span>₹95</span>
+                </div>
+                <div class="oc-track">
+                  <div class="track-step done"><div class="ts-dot"></div><span>Ordered</span></div>
+                  <div class="track-line done"></div>
+                  <div class="track-step done"><div class="ts-dot"></div><span>Packed</span></div>
+                  <div class="track-line done"></div>
+                  <div class="track-step active"><div class="ts-dot"></div><span>Transit</span></div>
+                  <div class="track-line"></div>
+                  <div class="track-step"><div class="ts-dot"></div><span>Delivered</span></div>
+                </div>
+                <div class="oc-eta">🕐 Estimated delivery: 45 mins</div>
+              </div>
+
+              <div class="order-card">
+                <div class="oc-top">
+                  <div class="oc-type">🧪 Lab Test Booked</div>
+                  <div class="oc-status status-scheduled">Scheduled</div>
+                </div>
+                <div class="oc-items">CBC Test + Blood Test</div>
+                <div class="oc-meta">
+                  <span>Booking #NV2024012</span>
+                  <span>₹498</span>
+                </div>
+                <div class="oc-eta">📅 Phlebotomist arrives: Tomorrow 7:00 AM</div>
+              </div>
+
+              <div class="order-card">
+                <div class="oc-top">
+                  <div class="oc-type">👨‍⚕️ Doctor Consultation</div>
+                  <div class="oc-status status-done">Completed</div>
+                </div>
+                <div class="oc-items">Dr. Priya Sharma – General Physician</div>
+                <div class="oc-meta">
+                  <span>Consult #NV2024010</span>
+                  <span>₹99</span>
+                </div>
+                <button class="oc-report-btn">📄 View Prescription</button>
+              </div>
+            </div>
+            <div style="height:80px;"></div>
+          </div>
+          <nav class="bottom-nav">
+            <button class="nav-item" onclick="navigate('home')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              <span>Home</span>
+            </button>
+            <button class="nav-item" onclick="navigate('medicine')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
+              <span>Services</span>
+            </button>
+            <button class="nav-item" onclick="navigate('lab')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+              <span>Lab Tests</span>
+            </button>
+            <button class="nav-item active" onclick="navigate('orders')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Orders</span>
+            </button>
+            <button class="nav-item" onclick="navigate('profile')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Profile</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- ========== PROFILE SCREEN ========== -->
+        <div class="screen" id="screen-profile">
+          <div class="profile-header">
+            <button class="back-btn" onclick="navigate('home')">←</button>
+            <div class="profile-hero">
+              <img src="https://ui-avatars.com/api/?name=Arjun+Kumar&background=14B8A6&color=fff&size=80" alt="Profile" class="profile-hero-avatar"/>
+              <div class="profile-name">Arjun Kumar</div>
+              <div class="profile-meta">+91 98765 43210 • arjun@email.com</div>
+              <div class="profile-stats">
+                <div class="ps-item"><div class="ps-val">12</div><div class="ps-label">Orders</div></div>
+                <div class="ps-div"></div>
+                <div class="ps-item"><div class="ps-val">5</div><div class="ps-label">Lab Tests</div></div>
+                <div class="ps-div"></div>
+                <div class="ps-item"><div class="ps-val">8</div><div class="ps-label">Consults</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="screen-scroll profile-scroll">
+            <div class="profile-menu">
+              <div class="pm-section">
+                <div class="pm-item"><span class="pm-icon">📋</span><span class="pm-label">Health Records</span><span class="pm-arr">›</span></div>
+                <div class="pm-item"><span class="pm-icon">💊</span><span class="pm-label">Medicine Orders</span><span class="pm-arr">›</span></div>
+                <div class="pm-item"><span class="pm-icon">🧪</span><span class="pm-label">Lab Test Reports</span><span class="pm-arr">›</span></div>
+                <div class="pm-item"><span class="pm-icon">💬</span><span class="pm-label">Consultations</span><span class="pm-arr">›</span></div>
+              </div>
+              <div class="pm-section">
+                <div class="pm-item"><span class="pm-icon">💳</span><span class="pm-label">Payment Methods</span><span class="pm-arr">›</span></div>
+                <div class="pm-item"><span class="pm-icon">📍</span><span class="pm-label">Saved Addresses</span><span class="pm-arr">›</span></div>
+                <div class="pm-item"><span class="pm-icon">👨‍👩‍👧</span><span class="pm-label">Family Members</span><span class="pm-arr">›</span></div>
+                <div class="pm-item"><span class="pm-icon">🎁</span><span class="pm-label">Offers & Coupons</span><span class="pm-arr">›</span></div>
+              </div>
+              <div class="pm-section">
+                <div class="pm-item"><span class="pm-icon">⚙️</span><span class="pm-label">Settings</span><span class="pm-arr">›</span></div>
+                <div class="pm-item"><span class="pm-icon">🆘</span><span class="pm-label">Help & Support</span><span class="pm-arr">›</span></div>
+                <div class="pm-item" style="color:#EF4444;"><span class="pm-icon">🚪</span><span class="pm-label">Logout</span><span class="pm-arr">›</span></div>
+              </div>
+            </div>
+            <div style="height:40px;"></div>
+          </div>
+          <nav class="bottom-nav">
+            <button class="nav-item" onclick="navigate('home')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              <span>Home</span>
+            </button>
+            <button class="nav-item" onclick="navigate('medicine')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
+              <span>Services</span>
+            </button>
+            <button class="nav-item" onclick="navigate('lab')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+              <span>Lab Tests</span>
+            </button>
+            <button class="nav-item" onclick="navigate('orders')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Orders</span>
+            </button>
+            <button class="nav-item active" onclick="navigate('profile')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Profile</span>
+            </button>
+          </nav>
+        </div>
+
+      </div><!-- end phone-screen -->
+    </div><!-- end phone-frame -->
+  </div><!-- end app-wrapper -->
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal" onclick="closeModal(event)">
+    <div class="modal-card">
+      <h3 class="modal-title">Book Appointment</h3>
+      <p class="modal-sub">Choose your preferred slot</p>
+      <div class="modal-slots">
+        <button class="slot-btn active">Today 9 AM</button>
+        <button class="slot-btn">Today 11 AM</button>
+        <button class="slot-btn">Today 2 PM</button>
+        <button class="slot-btn">Tomorrow 8 AM</button>
+      </div>
+      <div class="modal-info">
+        <div class="mi-row"><span>🏠 Home Collection</span><span>Free</span></div>
+        <div class="mi-row"><span>📋 Reports</span><span>Within 6 hrs</span></div>
+      </div>
+      <button class="modal-confirm-btn" onclick="confirmBooking()">Confirm Booking</button>
+      <button class="modal-cancel-btn" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
