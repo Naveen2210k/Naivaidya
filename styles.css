@@ -4,28 +4,43 @@
    ======================== */
 
 :root {
-  --teal: #14B8A6;
-  --teal-dark: #0D9488;
-  --teal-light: #CCFBF1;
-  --blue-dark: #1E3A8A;
-  --blue-mid: #2563EB;
+  /* Purple Theme123 */
+  --teal: #8B5CF6;
+  --teal-dark: #7C3AED;
+  --teal-light: #F3E8FF;
+
+  --blue-dark: #6D28D9;
+  --blue-mid: #8B5CF6;
+
   --red: #EF4444;
   --red-light: #FEE2E2;
+
   --purple: #7C3AED;
-  --purple-light: #EDE9FE;
+  --purple-light: #F3E8FF;
+
   --orange: #F97316;
   --orange-light: #FEF3C7;
+
   --green: #10B981;
   --green-light: #DCFCE7;
-  --bg: #F8FAFC;
+
+  --bg: #FAFAFF;
   --white: #FFFFFF;
-  --text-primary: #0F172A;
-  --text-secondary: #64748B;
-  --text-muted: #94A3B8;
-  --border: #E2E8F0;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
-  --shadow-lg: 0 10px 40px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08);
+
+  --text-primary: #1F1B2D;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+
+  --border: #E9D5FF;
+
+  --shadow-sm: 0 1px 3px rgba(124,58,237,0.08),
+               0 1px 2px rgba(124,58,237,0.06);
+
+  --shadow-md: 0 4px 16px rgba(124,58,237,0.10),
+               0 2px 6px rgba(124,58,237,0.06);
+
+  --shadow-lg: 0 10px 40px rgba(124,58,237,0.12),
+               0 4px 16px rgba(124,58,237,0.08);
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -136,7 +151,7 @@ html, body {
 .splash-bg {
   width: 100%;
   height: 100%;
-  background: linear-gradient(160deg, #14B8A6 0%, #0D9488 40%, #1E3A8A 100%);
+  background: linear-gradient(160deg, #A855F7 0%, #8B5CF6 45%, #6D28D9 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -466,10 +481,9 @@ html, body {
   box-shadow: var(--shadow-sm);
 }
 .service-card:active { transform: scale(0.92); }
-
-.sc-teal { background: linear-gradient(135deg, #14B8A6, #0D9488); }
+.sc-teal { background: linear-gradient(135deg, #A855F7, #7C3AED); }
 .sc-purple { background: linear-gradient(135deg, #7C3AED, #5B21B6); }
-.sc-blue { background: linear-gradient(135deg, #2563EB, #1D4ED8); }
+.sc-blue { background: linear-gradient(135deg, #8B5CF6, #6D28D9); }
 .sc-red { background: linear-gradient(135deg, #EF4444, #DC2626); }
 
 .sc-icon { font-size: 26px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
@@ -568,7 +582,7 @@ html, body {
    PROMO BANNER
    ======================== */
 .promo-banner {
-  background: linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 50%, #2563EB 100%);
+  background: linear-gradient(135deg, #A855F7 0%, #8B5CF6 50%, #6D28D9 100%);
   border-radius: var(--radius-lg);
   padding: 20px;
   display: flex;
@@ -748,7 +762,8 @@ html, body {
    AI CARD
    ======================== */
 .ai-card {
-  background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+
+  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
   border-radius: var(--radius-lg);
   padding: 20px;
   display: flex;
@@ -1167,7 +1182,7 @@ html, body {
    LAB TEST SCREEN
    ======================== */
 .lab-banner {
-  background: linear-gradient(135deg, #14B8A6 0%, #0D9488 60%, #0F766E 100%);
+  background: linear-gradient(135deg, #A855F7 0%, #8B5CF6 60%, #6D28D9 100%);
   border-radius: var(--radius-lg);
   padding: 20px;
   display: flex;
@@ -1577,7 +1592,7 @@ html, body {
   align-items: center;
   gap: 12px;
   padding: 48px 16px 14px;
-  background: linear-gradient(135deg, #1E3A8A, #2563EB);
+  background: linear-gradient(135deg, #8B5CF6, #6D28D9);
   border-bottom: none;
 }
 
@@ -1651,7 +1666,7 @@ html, body {
 .chat-avatar-small {
   width: 30px;
   height: 30px;
-  background: linear-gradient(135deg, #1E3A8A, #2563EB);
+  background: linear-gradient(135deg, #8B5CF6, #6D28D9);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1764,7 +1779,7 @@ html, body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(20,184,166,0.35);
+  box-shadow: 0 4px 12px rgba(124,58,237,0.35);
   transition: all 0.2s;
   flex-shrink: 0;
 }
@@ -1896,7 +1911,7 @@ html, body {
    PROFILE SCREEN
    ======================== */
 .profile-header {
-  background: linear-gradient(160deg, var(--teal) 0%, var(--teal-dark) 60%, var(--blue-dark) 100%);
+  background: linear-gradient(160deg, #A855F7 0%, #8B5CF6 60%, #6D28D9 100%);
   padding: 0 16px 0;
   position: relative;
 }
@@ -2087,7 +2102,8 @@ html, body {
   font-weight: 700;
   cursor: pointer;
   margin-bottom: 10px;
-  box-shadow: 0 4px 16px rgba(20,184,166,0.3);
+
+  box-shadow: 0 4px 16px rgba(124,58,237,0.3);
 }
 
 .modal-cancel-btn {
@@ -2131,7 +2147,7 @@ html, body {
    RESPONSIVE
    ======================== */
 @media (max-width: 440px) {
-  .app-wrapper { padding: 0; background: #F8FAFC; }
+  .app-wrapper { padding: 0; background: #FAFAFF; }
   .phone-frame {
     width: 100vw;
     height: 100vh;
@@ -2141,4 +2157,55 @@ html, body {
   }
   .phone-notch { display: none; }
   .phone-screen { border-radius: 0; }
+}
+/* ========================
+   PURPLE THEME OVERRIDES
+   White cards + purple borders
+   ======================== */
+.med-card,
+.doc-card,
+.lab-card,
+.order-card,
+.pm-section,
+.savings-card,
+.doctor-profile-card,
+.lab-list-card {
+  background: #FFFFFF;
+  border: 1.5px solid #E9D5FF;
+}
+
+/* Purple gradient on all action buttons */
+.doc-btn,
+.dpc-btn,
+.savings-btn,
+.modal-confirm-btn,
+.chat-send,
+.llc-btn,
+.rx-btn,
+.promo-btn,
+.lb-btn {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+  color: white;
+}
+
+/* Phone frame purple glow */
+.phone-frame {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.1),
+    0 30px 80px rgba(0,0,0,0.6),
+    0 0 80px rgba(139,92,246,0.25),
+    inset 0 1px 1px rgba(255,255,255,0.1);
+}
+
+/* Nav active state purple */
+.nav-item.active {
+  color: #8B5CF6;
+}
+.nav-item.active svg {
+  filter: drop-shadow(0 0 6px rgba(139,92,246,0.5));
+}
+
+/* SOS card box shadow stays red */
+.sos-card {
+  box-shadow: 0 8px 30px rgba(239,68,68,0.4);
 }
